@@ -133,16 +133,8 @@ async function installAntigravity(skill) {
 }
 
 async function installCursor(skill) {
-  const dest = path.join(TARGET_ROOT, ".cursor", "rules", `${skill.name}.mdc`);
-  try {
-    const body = await fs.readFile(skill.path, "utf8");
-    const frontmatter = `---\ndescription: ${skill.name} development skill\nalwaysApply: false\n---\n\n`;
-    const contents = frontmatter + body;
-    await writeFileWithConfirmation(dest, contents, { label: `Cursor: ${skill.name}` });
-  } catch (err) {
-    console.log(chalk.red(`  x failed   ${path.relative(TARGET_ROOT, dest)} — ${err.message}`));
-    summary.failed.push(`Cursor: ${skill.name} (${err.message})`);
-  }
+  const dest = path.join(TARGET_ROOT, ".cursor", "skills", skill.name, "SKILL.md");
+  await copySkillToFolder(skill, dest, { label: `Cursor: ${skill.name}` });
 }
 
 async function installAgentsMd(skills) {
@@ -205,7 +197,7 @@ function printSummary() {
 async function runInstallForTarget(target, skills) {
   switch (target) {
     case "cursor":
-      console.log(chalk.bold("\nInstalling Cursor rules..."));
+      console.log(chalk.bold("\nInstalling Cursor skills..."));
       for (const s of skills) await installCursor(s);
       break;
     case "claude":

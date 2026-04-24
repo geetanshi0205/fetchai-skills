@@ -44,5 +44,8 @@
     "@inquirer/prompts": "latest",
     "fs-extra": "latest",
     "chalk": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
