@@ -1,0 +1,48 @@
+{
+  "name": "fetch-skills",
+  "version": "1.0.0",
+  "description": "CLI installer for Fetch.ai developer skills across Cursor, Claude Code, Antigravity, and agent coding tools.",
+  "type": "module",
+  "bin": {
+    "fetch-skills": "./bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node ./bin/install.js",
+    "test:pack": "npm pack --dry-run"
+  },
+  "keywords": [
+    "fetch-ai",
+    "fetchai",
+    "cursor",
+    "claude-code",
+    "antigravity",
+    "agents",
+    "skills",
+    "ai-coding",
+    "vibe-coding"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Geetanshi Goel",
+    "url": "https://github.com/geetanshi0205"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geetanshi0205/fetchai-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/geetanshi0205/fetchai-skills/issues"
+  },
+  "homepage": "https://github.com/geetanshi0205/fetchai-skills#readme",
+  "dependencies": {
+    "@inquirer/prompts": "latest",
+    "fs-extra": "latest",
+    "chalk": "latest"
+  }
+}
